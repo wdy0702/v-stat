@@ -1,0 +1,19 @@
+{
+  "name": "v-stat",
+  "version": "1.0.0",
+  "description": "A vue directive for front-end tracking.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wzy816/v-stat.git"
+  },
+  "author": "wzy816@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wzy816/v-stat/issues"
+  },
+  "homepage": "https://github.com/wzy816/v-stat#readme"
+}
