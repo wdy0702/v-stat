@@ -11,7 +11,7 @@
     "url": "git+https://github.com/wzy816/v-stat.git"
   },
   "author": "wzy816@gmail.com",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wzy816/v-stat/issues"
   },

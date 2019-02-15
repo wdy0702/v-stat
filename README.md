@@ -5,11 +5,10 @@ A vue directive for front-end user behaviour tracking.
 ## Install
 
 ```bash
-# with right permission to the repository
-npm install git+ssh://git@github.com/wzy816/v-stat#master -S
+npm install v-stat -S
 ```
 
-## Doc
+## Docs
 
 ### Directive Format
 
@@ -17,14 +16,14 @@ npm install git+ssh://git@github.com/wzy816/v-stat#master -S
 
 ### Supported Events
 
-| event  | fired when             | html tags |
-| ------ | ---------------------- | --------- |
-| ready  | directive is bounded   | div       |
-| click  | dom click event        | el-button |
-| enter  | ENTER key is down      | el-input  |
-| select | vnode is changed       | el-select |
-| typing | vnode is changed       | el-input  |
-| exit   | directive is unbounded | div       |
+| event  | fired when             | html tag examples |
+| ------ | ---------------------- | ----------------- |
+| ready  | directive is bounded   | div               |
+| click  | dom click event        | el-button         |
+| enter  | ENTER key is down      | el-input          |
+| select | vnode is changed       | el-select         |
+| typing | vnode is changed       | el-input          |
+| exit   | directive is unbounded | div               |
 
 ### Modifiers
 
@@ -34,13 +33,13 @@ npm install git+ssh://git@github.com/wzy816/v-stat#master -S
 | page     | 'home_page'     | the name of current page                                             |
 | info     | 'current_title' | the name of data from VueComponent, accessible by this.current_title |
 
-## Use
+## Usage
 
 ### declare v-stat directive in main.js
 
 ```js
 // import module
-import stat from 'vue-directive-stat'
+import stat from 'v-stat'
 
 // consumer function
 const send = msg => $http.post('/stat', msg).then(res => res.data)
