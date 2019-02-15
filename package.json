@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/wzy816/v-stat/issues"
   },
-  "homepage": "https://github.com/wzy816/v-stat#readme"
+  "homepage": "https://github.com/wzy816/v-stat#readme",
+  "dependencies": {
+    "deep-equal": "^1.0.1"
+  }
 }
