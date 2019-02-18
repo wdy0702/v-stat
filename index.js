@@ -80,8 +80,6 @@ export default function(send, aux) {
 
       // select
       if (events.indexOf('select') > -1) {
-        console.log(vnode)
-        console.log(oldVnode)
         if (equal(vnode.data.props, oldVnode.data.props)) return
         MSG(send, aux, binding, 'select', vnode)
       }
