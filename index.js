@@ -22,9 +22,7 @@ const MSG = function(send, aux, binding, event, vnode) {
       page: page,
       info: value
     }, aux)
-    if (last_msg === undefined || msg.target !== last_msg.target || msg.event !==
-      last_msg.event || msg
-      .page !== last_msg.page || msg.info !== last_msg.info || event ===
+    if (last_msg === undefined || !equal(msg, last_msg) || event ===
       'click') {
       last_msg = Object.assign({}, msg)
       msg.timestamp = Date.now()
@@ -70,14 +68,22 @@ export default function(send, aux) {
     // called when VNode has been updated
     // possibly not after its children have benn updated
     update: function(el, binding, vnode, oldVnode) {
-      // console.log('update')
       if (equal(vnode, oldVnode)) return
 
       const events = binding.arg.split('&')
 
       // typing
       if (events.indexOf('typing') > -1) {
+        if (equal(vnode.data.props, oldVnode.data.props)) return
         MSG(send, aux, binding, 'typing', vnode)
+      }
+
+      // select
+      if (events.indexOf('select') > -1) {
+        console.log(vnode)
+        console.log(oldVnode)
+        if (equal(vnode.data.props, oldVnode.data.props)) return
+        MSG(send, aux, binding, 'select', vnode)
       }
     },
 
@@ -87,12 +93,6 @@ export default function(send, aux) {
       if (equal(vnode, oldVnode)) return
 
       const events = binding.arg.split('&')
-
-      // select
-      if (events.indexOf('select') > -1) {
-        MSG(send, aux, binding, 'select', vnode)
-      }
-
     },
 
     // called only once when directive is unbounded from the element
