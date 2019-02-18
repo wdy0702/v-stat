@@ -1,6 +1,6 @@
 {
   "name": "v-stat",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A vue directive for front-end tracking.",
   "main": "index.js",
   "scripts": {
