@@ -22,7 +22,8 @@ const MSG = function(send, aux, binding, event, vnode) {
       page: page,
       info: value
     }, aux)
-    if (msg.target !== last_msg.target || msg.event !== last_msg.event || msg
+    if (last_msg === undefined || msg.target !== last_msg.target || msg.event !==
+      last_msg.event || msg
       .page !== last_msg.page || msg.info !== last_msg.info || event ===
       'click') {
       last_msg = Object.assign({}, msg)
@@ -69,7 +70,7 @@ export default function(send, aux) {
     // called when VNode has been updated
     // possibly not after its children have benn updated
     update: function(el, binding, vnode, oldVnode) {
-      console.log('update')
+      // console.log('update')
       if (equal(vnode, oldVnode)) return
 
       const events = binding.arg.split('&')
@@ -82,7 +83,7 @@ export default function(send, aux) {
 
     // called when VNode and its children have been updated
     componentUpdated: function(el, binding, vnode, oldVnode) {
-      console.log('componentUpdated')
+      // console.log('componentUpdated')
       if (equal(vnode, oldVnode)) return
 
       const events = binding.arg.split('&')
@@ -96,7 +97,7 @@ export default function(send, aux) {
 
     // called only once when directive is unbounded from the element
     unbind: function(el, binding, vnode) {
-      console.log('unbind')
+      // console.log('unbind')
       const events = binding.arg.split('&')
 
       if (events.indexOf('click') > -1) {
