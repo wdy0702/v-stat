@@ -16,14 +16,15 @@ npm install v-stat -S
 
 ### Supported Events
 
-| event  | fired when             | html tag examples |
-| ------ | ---------------------- | ----------------- |
-| ready  | directive is bounded   | div               |
-| click  | dom click event        | el-button         |
-| enter  | ENTER key is down      | el-input          |
-| select | vnode is changed       | el-select         |
-| typing | vnode is changed       | el-input          |
-| exit   | directive is unbounded | div               |
+| event  | fired when             | html tag examples  |
+| ------ | ---------------------- | ------------------ |
+| ready  | directive is bounded   | div                |
+| click  | dom click event        | el-button          |
+| enter  | ENTER key is down      | el-input           |
+| select | vnode is changed       | el-select          |
+| typing | vnode is changed       | el-input           |
+| check  | vnode is changed       | el-table selection |
+| exit   | directive is unbounded | div                |
 
 ### Modifiers
 

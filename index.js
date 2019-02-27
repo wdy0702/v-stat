@@ -83,6 +83,12 @@ export default function(send, aux) {
         if (equal(vnode.data.props, oldVnode.data.props)) return
         MSG(send, aux, binding, 'select', vnode)
       }
+
+      // check
+      if (events.indexOf('check') > -1) {
+        MSG(send, aux, binding, 'check', vnode)
+      }
+
     },
 
     // called when VNode and its children have been updated
